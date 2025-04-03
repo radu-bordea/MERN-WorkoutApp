@@ -1,4 +1,5 @@
 require("dotenv").config();
+const mongoose = require("mongoose");
 const express = require("express");
 const workoutRoutes = require("./routes/workouts");
 
@@ -6,7 +7,7 @@ const workoutRoutes = require("./routes/workouts");
 const app = express();
 
 // middleware - looks if there is body to the request
-app.use(express.json())
+app.use(express.json());
 
 app.use((req, res, next) => {
   console.log(req.path, req.method);
@@ -16,7 +17,15 @@ app.use((req, res, next) => {
 // routes
 app.use("/api/workouts", workoutRoutes);
 
-// listen for requests
-app.listen(process.env.PORT, () => {
-  console.log("listening on port 4000");
-});
+// connect to db
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    // listen for requests
+    app.listen(process.env.PORT, () => {
+      console.log("connecting to db & listening on port 4000");
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
