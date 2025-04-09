@@ -35,9 +35,18 @@ header a {
 /* homepage */
 .home {
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 100px;
+  grid-template-columns: 1fr 3fr;
+  gap: 50px;
+  text-align: center;
 }
+
+.home-click {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+
+
 .workout-details {
   background: #fff;
   border-radius: 4px;
@@ -99,4 +108,28 @@ div.error {
 }
 input.error {
   border: 1px solid var(--error);
+}
+
+.formBtn {
+  width: 100%;
+  background-color: rgb(10, 127, 163);
+  color: white;
+  border-radius: 10px;
+  padding: 5px;
+  font-size: large;
+  margin: 10px 0px;
+}
+
+.scrollable-container {
+  max-height: 70vh; /* or any height you prefer */
+  overflow-y: auto;  /* vertical scroll */
+  padding-right: 10px; /* optional: adds spacing for scrollbar */
+}
+
+
+/* one column on small screens */
+@media (max-width: 768px) {
+  .home{
+    grid-template-columns: 1fr;
+  }
 }

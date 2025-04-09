@@ -9,3 +9,4 @@
 # frontend
 - npx create-react-app@latest my-app
 - npm install react-router-dom
+- npm install date-fns
