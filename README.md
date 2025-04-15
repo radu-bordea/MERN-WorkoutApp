@@ -5,6 +5,7 @@
 - npm i dotenv
 - npm install mongoose
 - npm i bcrypt
+- npm install validator
 
 
 # frontend
