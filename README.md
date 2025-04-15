@@ -4,6 +4,7 @@
 - npm install nodemon
 - npm i dotenv
 - npm install mongoose
+- npm i bcrypt
 
 
 # frontend
